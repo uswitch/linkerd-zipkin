@@ -1,0 +1,5 @@
+pipeline:
+  jar:
+    image: azul/zulu-openjdk:8
+    commands:
+      - ./sbt assembly
