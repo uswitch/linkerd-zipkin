@@ -4,3 +4,10 @@ pipeline:
     commands:
       - apt-get update && apt-get install curl -y
       - ./sbt assembly
+
+  publishImage:
+      when: push
+      branch: master
+    image: plugins/docker
+    repo: registry.usw.co/cloud/linkerd-zipkin
+    tags: [ "latest" ]
