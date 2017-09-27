@@ -1,5 +1,6 @@
 pipeline:
   jar:
-    image: azul/zulu-openjdk:8
+    image: azul/zulu-openjdk-debian:8
     commands:
+      - apt-get update && apt-get install curl -y
       - ./sbt assembly
